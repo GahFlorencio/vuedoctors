@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     async getDoctors() {
-      let { data } = await axios.get("http://mazzafc.api.test/api/doctors");
+      let { data } = await axios.get("http://157.245.131.54/api/doctors");
       this.items = data.doctors;
     },
   },

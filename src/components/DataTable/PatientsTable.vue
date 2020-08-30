@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     async getDoctors() {
-      let { data } = await axios.get("http://mazzafc.api.test/api/patients");
+      let { data } = await axios.get("http://157.245.131.54/api/patients");
       this.items = data.patients;
     },
     resetModal() {
