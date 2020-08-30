@@ -40,7 +40,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://mazzafc.api.test/api/login",
+          url: "http://157.245.131.54/api/login",
           data: user,
           method: "POST",
         })
@@ -66,7 +66,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://mazzafc.api.test/api/users",
+          url: "http://157.245.131.54/api/users",
           data: {
             name: user.name,
             email: user.email,
@@ -98,7 +98,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://mazzafc.api.test/api/users",
+          url: "http://157.245.131.54/api/users",
           data: {
             name: user.name,
             email: user.email,
@@ -118,7 +118,7 @@ export default new Vuex.Store({
       return new Promise(() => {
         commit("auth_request");
         axios({
-          url: `http://mazzafc.api.test/api/logout/${token}`,
+          url: `http://157.245.131.54/api/logout/${token}`,
           method: "PUT",
         })
           .then(() => {
@@ -136,7 +136,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: `http://mazzafc.api.test/api/valid/${sessionStorage.getItem(
+          url: `http://157.245.131.54/api/valid/${sessionStorage.getItem(
             "token"
           ) || ""}`,
           method: "GET",

@@ -198,7 +198,7 @@ export default {
     async handleSubmit() {
       if (!!this.form.date && !!this.form.hour && !!this.form.patient_id) {
         await axios
-          .put("http://mazzafc.api.test/api/schedules/" + this.form.id, {
+          .put("http://157.245.131.54/api/schedules/" + this.form.id, {
             date: this.form.date,
             hour: this.form.hour,
             patient_id: this.form.patient_id,
@@ -214,7 +214,7 @@ export default {
     async handleCreate() {
       if (!!this.form.date && !!this.form.hour && !!this.form.patient_id) {
         await axios
-          .post("http://mazzafc.api.test/api/schedules/" + this.token, {
+          .post("http://157.245.131.54/api/schedules/" + this.token, {
             date: this.form.date,
             hour: this.form.hour,
             patient_id: this.form.patient_id,
@@ -229,7 +229,7 @@ export default {
     },
     async handleDelete(id) {
       await axios
-        .delete("http://mazzafc.api.test/api/schedules/" + id)
+        .delete("http://157.245.131.54/api/schedules/" + id)
         .then(() => {
          if (new Date(this.date).toLocaleDateString() !== new Date().toLocaleDateString() ) {
             this.getSchedulesDate();
@@ -240,7 +240,7 @@ export default {
     },
     async handleFinish(id) {
       await axios
-        .put("http://mazzafc.api.test/api/schedules/finish/" + id)
+        .put("http://157.245.131.54/api/schedules/finish/" + id)
         .then(() => {
           console.log(this.date, new Date());
 
@@ -252,12 +252,12 @@ export default {
         });
     },
     async getOptions() {
-      let { data } = await axios.get("http://mazzafc.api.test/api/patients");
+      let { data } = await axios.get("http://157.245.131.54/api/patients");
       this.options = data.patients;
     },
     async getSchedules() {
       let { data } = await axios.get(
-        "http://mazzafc.api.test/api/schedules/" + this.token
+        "http://157.245.131.54/api/schedules/" + this.token
       );
       this.items = data.data;
       this.currentPage = data.current_page;
@@ -265,7 +265,7 @@ export default {
     },
     async getSchedulesDate() {
       let { data } = await axios.get(
-        "http://mazzafc.api.test/api/schedules/" +
+        "http://157.245.131.54/api/schedules/" +
           this.token +
           "/" +
           new Date(this.date).toISOString().split("T")[0]
